@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+@interface ZeroedIntrinsicContentSizeImageView : UIImageView
+@end
+
 @interface ViewController : UIViewController
-
-
 @end
 
