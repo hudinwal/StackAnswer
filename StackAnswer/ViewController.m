@@ -51,16 +51,20 @@
 {
     UITableViewCell * cell = [tableView cellForRowAtIndexPath:indexPath];
     UIImageView * imageView = (UIImageView *)[cell viewWithTag:13];
-    
-    if(imageView.image)
-        imageView.image = nil;
-    else
-        imageView.image = [UIImage imageNamed:@"Untitled"];
-    
+    UILabel * label = (UILabel *)[cell viewWithTag:14];
 
-    [UIView animateWithDuration:0.3 animations:^{
+    if(imageView.image) {
+        imageView.image = nil;
+        label.text = @"Where is my bus?";
+    }
+    else {
+        imageView.image = [UIImage imageNamed:@"Untitled"];
+        label.text = @"Lets go to school";
+    }
+    
+    [UIView animateWithDuration:0.5 delay:0.0 usingSpringWithDamping:0.5 initialSpringVelocity:0.5 options:UIViewAnimationOptionCurveLinear animations:^{
         [cell layoutIfNeeded];
-    }];
+    } completion:NULL];
 
 }
 
